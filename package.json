@@ -1,0 +1,25 @@
+{
+  "name": "react-native-gestureunlock",
+  "version": "1.0.0",
+  "description": "A gesture component for react native to unlock the screen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ccwinner/react-native-gestureunlock.git"
+  },
+  "keywords": [
+    "react-native",
+    "gesture",
+    "unlock",
+    "native"
+  ],
+  "author": "Remiskrlyt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccwinner/react-native-gestureunlock/issues"
+  },
+  "homepage": "https://github.com/ccwinner/react-native-gestureunlock#readme"
+}
