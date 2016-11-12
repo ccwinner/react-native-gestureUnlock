@@ -26,36 +26,38 @@ RCT_EXPORT_VIEW_PROPERTY(onComplete, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(nodeScale, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(colCount, int)
 RCT_EXPORT_VIEW_PROPERTY(backgroundImgName, NSString)
+RCT_EXPORT_VIEW_PROPERTY(lineColor, UIColor)
+RCT_EXPORT_VIEW_PROPERTY(lineWidth, CGFloat)
 RCT_EXPORT_METHOD(setupNodeUI:(NSDictionary *)params) {
-  NSString *nodeNormalImg = params[@"nodeNormal"];
-  NSString *nodeErrorImg = params[@"nodeError"];
-  NSString *nodeSelectImg = params[@"nodeSelect"];
-  self.innerView.nodeErrorImgName = nodeErrorImg;
-  self.innerView.nodeNormalImgName = nodeNormalImg;
-  self.innerView.nodeSelectedImgName = nodeSelectImg;
+    NSString *nodeNormalImg = params[@"nodeNormal"];
+    NSString *nodeErrorImg = params[@"nodeError"];
+    NSString *nodeSelectImg = params[@"nodeSelect"];
+    self.innerView.nodeErrorImgName = nodeErrorImg;
+    self.innerView.nodeNormalImgName = nodeNormalImg;
+    self.innerView.nodeSelectedImgName = nodeSelectImg;
 }
 
 - (UIView *)view {
-  RNGestureView *gestureV = self.innerView;
-  gestureV.delegate = self;
-  return gestureV;
+    RNGestureView *gestureV = self.innerView;
+    gestureV.delegate = self;
+    return gestureV;
 }
 
 #pragma mark - CXGestureViewDelegate
 - (void)gestureView:(RNGestureView *)view finished:(NSString *)result {
-  if (!view.onComplete) {
-    return;
-  }
-  view.onComplete(@{
-                    @"completion" : result
-                    });
+    if (!view.onComplete) {
+        return;
+    }
+    view.onComplete(@{
+                      @"completion" : result
+                      });
 }
 
 #pragma mark - getter
 - (RNGestureView *)innerView {
-  if (!_innerView) {
-    _innerView = [RNGestureView new];
-  }
-  return _innerView;
+    if (!_innerView) {
+        _innerView = [RNGestureView new];
+    }
+    return _innerView;
 }
 @end

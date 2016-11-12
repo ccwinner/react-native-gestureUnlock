@@ -23,6 +23,8 @@ export default class RNGestureView extends Component {
         colCount: PropTypes.number,
         onGestureComplete:PropTypes.func,
         backgroundImgName:PropTypes.string,
+        lineColor: PropTypes.string,
+        lineWidth: PropTypes.number,
         nodeThemes: PropTypes.shape({
             nodeNormal: PropTypes.string,
             nodeError: PropTypes.string,
